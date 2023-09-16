@@ -1,0 +1,24 @@
+h2 {
+    text-align: center;
+    color: red
+}
+input {
+    width: 450px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    margin-left: 485px;
+    margin-bottom: 10px;
+}
+input::placeholder {
+    text-align: center;
+}
+button {
+    cursor: pointer;
+    border-radius: 12px;
+    border-width: 10px;
+    border-color: red;
+    color: white;
+    background-color: red;
+    margin-left: 665px;
+}

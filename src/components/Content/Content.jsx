@@ -35,6 +35,7 @@ const Content = (props) => {
       !detail.trim()
     ) {
       alert("Inputs are empty");
+      return;
     }
     const newProduct = {
       name: name,

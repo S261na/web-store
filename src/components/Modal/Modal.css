@@ -1,0 +1,29 @@
+h2 {
+    color: red;
+    text-align: center;
+}
+.edit {
+    width: 40%;
+    height: 600px;
+    background: linear-gradient(
+      90deg,
+      rgb(243, 176, 174) 0%,
+      rgb(205, 91, 91) 100%
+    );
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  #pr {
+    color: white;
+  }
+  .inp {
+    margin-left: 58px;
+    margin-top: 40px;
+  }
+  #save {
+ margin-left: 220px;
+  }

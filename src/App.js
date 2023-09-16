@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
-import Content from "./components/Navbar/Content/Content";
+import Content from "./components/Content/Content";
 import "./App.css";
-import ProductLIst from "./components/Navbar/ProductList/ProductLIst";
+import ProductLIst from "./components/ProductList/ProductLIst";
 import Modal from "./components/Modal/Modal";
+import Detail from "./components/Detail/Detail";
 
 const App = () => {
   const [product, setProduct] = useState([]);
   const [editProd, setEditProd] = useState(null);
+  const [detailProd, setDetailProd] = useState(null);
 
   // ---------------ADD------------
   function addFunc(newObj) {
@@ -20,15 +22,14 @@ const App = () => {
     const deleteProduct = product.filter((name) => name.id !== id);
     setProduct(deleteProduct);
   }
-  // -------------------------EDIT----------------
+  // -------------------------EDIT--------------------------
   function editFunc(id) {
     const editProduct = product.find((item) => item.id === id);
-    setProduct(editProduct);
-    console.log(product);
+    setEditProd(editProduct);
   }
 
   function saveChanges(newObj) {
-    const newProd = [...product];
+    let newProd = [...product];
     newProd = newProd.map((item) => {
       if (item.id === newObj.id) {
         return newObj;
@@ -39,6 +40,15 @@ const App = () => {
     setProduct(newProd);
     setEditProd(null);
   }
+  // ------------------------DETAIL-------------------------
+  function detailFunc(id) {
+    const detailProduct = product.find((item) => item.id === id);
+    setDetailProd(detailProduct);
+  }
+  // ------------------CLOSE DETAIL --------------------
+  function closeDet() {
+    setDetailProd(null);
+  }
 
   return (
     <div>
@@ -48,8 +58,14 @@ const App = () => {
         product={product}
         deleteFunc={deleteFunc}
         editFunc={editFunc}
+        detailFunc={detailFunc}
       />
-      {editProd ? <Modal editProd={editProd} /> : null}
+      {editProd ? (
+        <Modal editProd={editProd} saveChanges={saveChanges} />
+      ) : null}
+      {detailProd ? (
+        <Detail detailProd={detailProd} closeDet={closeDet} />
+      ) : null}
     </div>
   );
 };

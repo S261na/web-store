@@ -1,0 +1,41 @@
+.details {
+  width: 40%;
+  height: 600px;
+  background: linear-gradient(
+    90deg,
+    rgb(243, 176, 174) 0%,
+    rgb(205, 91, 91) 100%
+  );
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+#but {
+  position: absolute;
+  height: 45px;
+  margin: 0 auto;
+  margin-top: -65px;
+}
+
+#image {
+  width: 200px;
+  height: 250px;
+  margin-top: 80px;
+}
+#info {
+  color: white;
+  text-transform: uppercase;
+}
+.det {
+  font-weight: bolder;
+  color: white;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+#bk {
+  margin-left: 250px;
+  margin-top: -270px;
+}
